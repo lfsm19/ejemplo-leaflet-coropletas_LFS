@@ -29,9 +29,12 @@
       var osm  = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '<a href="http://www.openstreetmap.org/">OpenStreetMap</a>'
       });     
-      var box  = L.tileLayer('https://api.tiles.mapbox.com/{z}/{x}/{y}.png', {
-      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>'     
-      });
+      var mbox  = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibHVpZmVyc2FuZG92YWwiLCJhIjoiY2o4NTZxMnhkMDk0ZDJ3dWRsNDgwOWp3aCJ9.f8oL3nLK6W6VbVw2QJUCOw', {
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',     
+      id: 'mapbox.satellite',
+      accessToken: 'pk.eyJ1IjoibHVpZmVyc2FuZG92YWwiLCJhIjoiY2o4NTZxMnhkMDk0ZDJ3dWRsNDgwOWp3aCJ9.f8oL3nLK6W6VbVw2QJUCOw'
+      
+      });    
       osm.addTo(mapa); 
     
   
@@ -102,7 +105,7 @@
       registrosPresencia.addTo(mapa);	    
 	    
       var baseLayers = {
-	"OpenStreetMap": osm
+	"OpenStreetMap": osm,
 	"mapbox": box
 	      
       };
