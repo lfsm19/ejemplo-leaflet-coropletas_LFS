@@ -31,6 +31,13 @@
       });
       osm.addTo(mapa);
 	    
+     var mapa = L.map('map').setView([9.7, -84], 8);
+      var box  = L.tileLayer('https://api.tiles.mapbox.com/{z}/{x}/{y}.png', {
+        attribution: '<a href="http://www.openstreetmap.org/">OpenStreetMap</a>'
+      });
+      box.addTo(mapa);	 
+      accessToken: 'pk.eyJ1IjoibHVpZmVyc2FuZG92YWwiLCJhIjoiY2o4NTZxMnhkMDk0ZDJ3dWRsNDgwOWp3aCJ9.f8oL3nLK6W6VbVw2QJUCOw'
+	    
       // retorna un color con base en la cantidad de especies
       function color(d) {
 	return d > 60 ? '#d7191c' :
@@ -99,6 +106,8 @@
 	    
       var baseLayers = {
 	"OpenStreetMap": osm
+	"OpenStreetMap": box
+	      
       };
       var overlays = {
 	"Riqueza de especies": riqueza,
