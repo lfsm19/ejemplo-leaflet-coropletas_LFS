@@ -29,12 +29,12 @@
       var osm  = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '<a href="http://www.openstreetmap.org/">OpenStreetMap</a>'
       });
-      osm.addTo(mapa);
-	    
-     var mapa = L.map('map').setView([9.7, -84], 8);
+      osm.addTo(mapa); 
+    
       var box  = L.tileLayer('https://api.tiles.mapbox.com/{z}/{x}/{y}.png', {
         attribution: '<a href="http://www.openstreetmap.org/">OpenStreetMap</a>'
       });
+	    
       box.addTo(mapa);	 
       accessToken: 'pk.eyJ1IjoibHVpZmVyc2FuZG92YWwiLCJhIjoiY2o4NTZxMnhkMDk0ZDJ3dWRsNDgwOWp3aCJ9.f8oL3nLK6W6VbVw2QJUCOw'
 	    
@@ -106,7 +106,7 @@
 	    
       var baseLayers = {
 	"OpenStreetMap": osm
-	"OpenStreetMap": box
+	"mapbox": box
 	      
       };
       var overlays = {
